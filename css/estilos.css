@@ -1,0 +1,156 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  #obtener-todos-los-platos{
+    width: 50%;
+    background: #1f53c5;
+    padding: 12px;
+    border: 1px solid white;
+    color: white;
+    margin: 16 0;
+    font-size: 16px;
+    font-weight: 900;
+
+  }
+  #generar-token{
+    width: 50% ;
+    background: #1f53c5;
+    padding: 12px;
+    border: 1px solid white;
+    color: white;
+    margin: 16 0;
+    font-size: 16px;
+    font-weight: 900;
+  }
+ 
+.orden-formularios{
+    display: grid;
+    grid-template-columns: repeat(7, 200px);
+    grid-template-rows: repeat(1, 750px);
+    #mi-formulario{
+        grid-column: 3;
+        grid-row: 1;
+        height: 50%;
+    }
+    #formulario-crear-plato{
+        grid-column: 1;
+        grid-row: 1;
+        height: 75%;
+        width:  300px;
+
+    }
+    #login{
+      grid-column: 5;
+      grid-row: 1;
+      height: 50%;
+      width:  300px;
+    }
+}
+  
+ 
+  
+ 
+  
+  .form-registro {
+      
+      label{
+          color: white;
+      }
+    width: 300px;
+    background-color: #24303c;
+    padding: 30px;
+    
+    border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff, 15px 15px 0px 0px #a1d8ff, 20px 20px 0px 0px #cae6ff, 25px 25px 0px 0px #e1eeff, 12px 9px 15px 12px rgba(0, 0, 0, 0);
+            box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff, 15px 15px 0px 0px #a1d8ff, 20px 20px 0px 0px #cae6ff, 25px 25px 0px 0px #e1eeff, 12px 9px 15px 12px rgba(0, 0, 0, 0);
+  }
+  
+  .form-registro .titulo-formulario {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .form-registro .titulo-formulario::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+    -webkit-box-shadow: 5px 5px 0px 0px #289fed, 1px 10px 0px 0px #5fb8ff, 5px 5px 0px 0px #289fed;
+            box-shadow: 5px 5px 0px 0px #289fed, 1px 10px 0px 0px #5fb8ff, 5px 5px 0px 0px #289fed;
+    color: #44525f;
+  }
+  
+  .form-registro .input-estilo {
+    width: 100%;
+    background-color: #24303c;
+    padding: 15px;
+    margin-bottom: 16px;
+    border: 1px solid #3680ca;
+    font-family: "calibri";
+    font-size: 18px;
+    color: white;
+    font-weight: 900px;
+    border-radius: 20px;
+    outline: none;
+    font-weight: 800;
+  }
+  
+  .form-registro .btn {
+    width: 100%;
+    background: #1f53c5;
+    padding: 12px;
+    border: 1px solid white;
+    color: white;
+    margin: 16 0;
+    font-size: 16px;
+    font-weight: 900;
+  }
+  
+  .link {
+    font-weight: 900;
+    outline: none;
+    text-decoration: none;
+    font-size: 15px;
+    list-style: "none";
+  }
+  
+
+  
+  .mis-usuarios-li {
+    grid-column: 3;
+    grid-row: 2;
+    color: white;
+    font-weight: 900;
+    display: flex;
+    flex-flow: column;
+    transform: translate(0px,-300px);
+
+  
+  }
+  
+  .mis-usuarios-li {
+    
+    div{
+      background-color: #445363;
+      width: 300px;
+      margin-top: 10px;
+      border: solid 3px #3f55fa;
+      p{
+        font-weight: 900;
+        font-size: large;
+        text-transform: capitalize;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  
+  */
+/*# sourceMappingURL=estilos.css.map */

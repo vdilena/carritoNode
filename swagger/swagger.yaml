@@ -1,0 +1,405 @@
+swagger: '2.0'
+info:
+  version: '2.0'
+  title: DelilahResto
+  description: DelilahResto, es una aplicacion de pedidos online.Tenemos todo lo que Necesitas. Pedilo, te lo Llevamos al instante 
+  contact:
+    name: Developer
+    email: eze.rey92@gmail.com
+tags:
+- name: "PEDIDOS"
+  description: "TODO SOBRE TUS PEDIDOS"
+- name: "PRODUCTOS"
+  description: "TODO SOBRE TUS PRODUCTOS"
+- name: "USUARIOS"
+  description: "TODO HACERCA DEL USUARIO"
+  
+  
+ 
+      
+paths:
+  /pedidos/misPedidos:
+  
+    get:
+      tags:
+      - "PEDIDOS"
+      summary: devuelve los pedidos del usuario
+      description: Esta ruta devuelve todos los pedidos que el usuario ha hecho, requiere el token en las cabeceras
+    
+      
+        
+     
+      parameters:
+        - in: header
+          name: token
+          type: string
+          required: true
+        
+      
+
+      
+      produces:
+        - application/json
+      consumes:
+        - application/json
+    
+         
+  
+      responses:
+        200:
+          description: OK
+          
+          
+          
+          
+  /pedidos:
+    get:
+      tags:
+      - "PEDIDOS"
+      summary: Devuelve la lista de todos los pedidos
+      description: Devuelve  todos los pedidos hechos por los usuarios debe ser administrador para tener acceso a esta ruta 
+      
+      produces:
+        - application/json
+      consumes:
+        - application/json
+       
+      
+      responses:
+        200:
+          description: OK
+          
+          
+  /pedidos/{id}:
+    
+    put:
+      tags:
+      - "PEDIDOS"
+      summary: Modificar un pedido.
+      description: Ruta para modificar un pedido en base a su id para hacer esto hay que ser administrador el rol debe ser(1)
+       
+      operationId: id
+      parameters:
+        - in: path
+          name: id
+          description: id del pedido que desea modificar
+          required: true
+          type: integer
+          
+          
+          
+        - in: body
+          name: pedidos
+      
+          schema:
+            type: object
+            required:
+              - userName
+            properties:
+              estado:
+                type: string  
+              tipoPago:
+                type: string
+              
+              rol:
+                type: string
+        
+         
+        
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      responses:
+        200:
+          description: OK
+          
+          
+    delete: 
+      tags:
+      - "PEDIDOS"
+      summary: Borrar un pedido.
+      description: Ruta para borrar un pedido en base a su id para hacer esto hay que ser administrador el rol debe ser(1)
+      
+      parameters:
+        - in: path
+          name: id
+          description: ID del producto que desea borrar
+          required: true
+          type: integer
+          
+          
+          
+        - in: body
+          name: pedido
+          description: Borrar producto
+          schema:
+            properties:
+              rol:
+                type: string
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      responses:
+        200:
+          description: OK
+          
+          
+          
+          
+          
+  /productos:
+    get:
+      tags:
+      - "PRODUCTOS"  
+      summary: Devuelve todos los productos
+      description: Devuelve  todos los productos esta ruta es tanto para administradores como para usuarios
+       
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      responses:
+        200:
+          description: OK
+    post:
+      tags:
+      - "PRODUCTOS"
+      summary: Esta ruta permite crear un nuevo producto
+      description: Esta ruta permite crear un nuevo producto, unicamente puede ser utilizada haciendo uso del rol de administrador el rol debe ser igual a 1
+       
+      produces:
+        - application/json
+      consumes:
+        - application/json
+        
+      parameters:
+        - in: body
+          name: productos
+          description: Crear un producto
+          schema:
+            type: object
+            required:
+              - userName
+            properties:
+              nombre:
+                type: string  
+              precio:
+                type: string
+              descripcion:
+                type: string 
+              rol:
+                type: string
+     
+        
+        
+      responses:
+        200:
+          description: OK
+          
+          
+      
+      
+  /productos/{id}:
+    
+    put:
+      tags:
+      - "PRODUCTOS"
+      summary: Modificar un producto.
+      description: Ruta para modificar un producto en base a su id para hacer esto hay que ser administrador el rol debe ser(1)
+       
+      operationId: productoId
+      parameters:
+        - in: path
+          name: id
+          description: id del producto que desea modificar
+          required: true
+          type: integer
+          
+          
+          
+        - in: body
+          name: productos
+          description: Crear un producto
+          schema:
+            type: object
+            required:
+              - userName
+            properties:
+              nombre:
+                type: string  
+              precio:
+                type: string
+              descripcion:
+                type: string 
+              rol:
+                type: string
+        
+         
+        
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      responses:
+        200:
+          description: OK
+          
+          
+    delete: 
+      tags:
+      - "PRODUCTOS"
+      summary: Borrar un producto.
+      description: Ruta para borrar un producto en base a su id para hacer esto hay que ser administrador el rol debe ser(1)
+      
+      parameters:
+        - in: path
+          name: id
+          description: ID del producto que desea borrar
+          required: true
+          type: integer
+          
+          
+          
+        - in: body
+          name: productos
+          description: Borrar producto
+          schema:
+            properties:
+              rol:
+                type: string
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      responses:
+        200:
+          description: OK
+  
+          
+  /pedidos/carrito:
+    post:
+      tags:
+      - "PEDIDOS"
+      summary: Esta ruta es el carro de compras de productos
+      description: Esta ruta es el carro de compras de productos, requiere el token en las cabeceras, se pide en base al id del producto en cuestion
+       
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      responses:
+        200:
+          description: OK
+          
+          
+          
+  /pedidos/enviar:
+    post:
+      tags:
+      - "PEDIDOS"
+      summary: Esta ruta envia lo que se tiene en el carro de compras
+      description: Esta ruta envia lo que se guardo en el carro de compras 
+       
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      responses:
+        200:
+          description: OK
+          
+          
+  /users/registrer:
+    post:
+      tags:
+      - "USUARIOS"
+      summary: Esta ruta es para registrar un Usuario
+      description: Esta ruta sirve para hacer un registro de un Usuario 
+       
+      produces:
+        - application/json
+      consumes:
+        - application/json
+        
+      parameters:
+        - in: body
+          name: user
+          description: Ruta para crear un usuario.
+          schema:
+            type: object
+            required:
+              - userName
+              - password
+              - email
+            properties:
+              username:
+                type: string  
+              password:
+                type: string
+              email:
+                type: string 
+              direccion:
+                type: string
+              numero:
+                type: string
+     
+        
+       
+      responses:
+        200:
+          description: OK
+          
+          
+          
+  /users/login:
+    post:
+    
+      tags:
+      - "USUARIOS"
+      summary: Esta ruta para ingresar un usuario
+      description: Esta ruta sirve para loguear un usuario. 
+       
+      produces:
+        - application/json
+      consumes:
+        - application/json
+        
+        
+      parameters:
+        - in: body
+          name: user
+          description: Ruta para acceder a la cuenta.
+          schema:
+            type: object
+            required:
+              - userName
+              - password
+              - email
+            properties:
+              username:
+                type: string  
+              password:
+                type: string
+              email:
+                type: string 
+              
+        
+      responses:
+        200:
+          description: OK        
+          
+
+   
+
+schemes:
+ - http
+ 
+
+# basePath: /api
+
+# host: localhost:3000
+
+host: localhost:3000
+basePath: /api
